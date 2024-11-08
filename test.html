@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoWeb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Teko:wght@300..700&display=swap"
+        rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputBox = document.getElementById('input-box');
+            const listTask = document.getElementById('list-task');
+
+            function addTask() {
+                if (inputBox.value === '') {
+                    alert('Come on, do something, sir!');
+                } else {
+                    let li = document.createElement('li');
+                    li.innerHTML = inputBox.value;
+                    listTask.appendChild(li);
+                    inputBox.value = ''; // Clear the input box after adding the task
+                }
+            }
+
+            document.querySelector('button').addEventListener('click', addTask);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="card">
+        <div class="title">
+            <h1>To-Do List</h1>
+            <div class="todo-icon"><img src="images/icons8-task-100.png" alt=""></div>
+        </div>
+        <div class="search">
+            <input type="text" id="input-box" placeholder="Add your task" spellcheck="false">
+            <button>Add</button>
+        </div>
+        <div class="todo">
+            <ul id="list-task">
+                <!-- Example tasks -->
+                <!-- <li class="checked">Task1</li>
+                <li>Task2</li>
+                <li>Task3</li> -->
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
